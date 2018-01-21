@@ -2,6 +2,35 @@
 
 ### WLAN config
 
+/etc/network/interfaces.d/wlan0: 
+```
+allow-hotplug wlan0
+auto wlan0
+iface wlan0 inet static
+  wpa-ssid REPLACED
+  wpa-psk REPLACED
+  address 192.168.178.80
+  netmask 255.255.255.0
+  gateway 192.168.178.1
+  dns-nameservers 192.168.178.1
+  dns-domain fritz.box
+  wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+/etc/wpa_supplicant/wpa_supplicant.conf:
+```
+ctrl_interface=/var/run/wpa_supplicant
+network={
+    ssid="REPLACED"
+    scan_ssid=1
+    proto=WPA RSN
+    key_mgmt=WPA-PSK
+    pairwise=CCMP TKIP
+    group=CCMP TKIP
+    psk=REPLACED
+}
+```
+
 ### Add ssh key for user robot
 ```
 mkdir -p /home/robot/.ssh && \
