@@ -62,7 +62,7 @@ sudo systemctl stop avahi-daemon && \
 
 ### I use ssh - remove samba
 ```
-sudo apt-get purge samba && \
+sudo apt-get purge samba samba-libs samba-common smbnetfs libsmbclient && \
 	sudo apt-get autoremove
 ```
 
