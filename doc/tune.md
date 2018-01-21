@@ -50,15 +50,15 @@ mkdir -p /root/.ssh && \
 ```
 
 ### I am connecting via WLAN - disable avahi and bluetooth
-´´´
+```
 sudo systemctl stop bluetooth && \
 	sudo systemctl disable bluetooth
-´´´
+```
 
-´´´
+```
 sudo systemctl stop avahi-daemon && \
 	sudo systemctl disable avahi-daemon
-´´´
+```
 
 ### I use ssh - remove samba
 ```
